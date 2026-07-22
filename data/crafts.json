@@ -1,0 +1,73 @@
+[
+  {
+    "id": 101,
+    "title": "Soft Crochet Daisy",
+    "category": "crochet",
+    "image": "images/crochet-daisy.jpg",
+    "description": "A bright yellow and white crochet daisy made with soft cotton yarn. Perfect for beginners learning flower motifs."
+  },
+  {
+    "id": 102,
+    "title": "Chunky Winter Scarf",
+    "category": "knitting",
+    "image": "images/chunky-scarf.jpg",
+    "description": "A thick, cozy scarf knitted with bulky yarn. Great for cold weather and simple enough for new knitters."
+  },
+  {
+    "id": 103,
+    "title": "Origami Crane",
+    "category": "origami",
+    "image": "images/origami-crane.jpg",
+    "description": "A traditional origami crane folded from patterned Japanese washi paper. Symbolizes peace and good fortune."
+  },
+  {
+    "id": 104,
+    "title": "Hand‑Stitched Floral Embroidery",
+    "category": "embroidery",
+    "image": "images/floral-embroidery.jpg",
+    "description": "A delicate floral embroidery piece using satin stitch and French knots. Ideal for decorating tote bags or clothing."
+  },
+  {
+    "id": 105,
+    "title": "Mini Clay Mushroom",
+    "category": "clay",
+    "image": "images/clay-mushroom.jpg",
+    "description": "A tiny clay mushroom sculpture painted with acrylics. Great for terrariums, desk decor, or keychains."
+  },
+  {
+    "id": 106,
+    "title": "Watercolor Sunset Landscape",
+    "category": "painting",
+    "image": "images/watercolor-sunset.jpg",
+    "description": "A soft watercolor sunset blending warm oranges and cool purples. Uses wet‑on‑wet technique for smooth gradients."
+  },
+  {
+    "id": 107,
+    "title": "DIY Upcycled Glass Jar",
+    "category": "diy",
+    "image": "images/upcycled-jar.jpg",
+    "description": "A recycled glass jar turned into a decorative storage container using twine, paint, and dried flowers."
+  },
+  {
+    "id": 108,
+    "title": "Laser‑Cut Wooden Bookmark",
+    "category": "digital",
+    "image": "images/laser-bookmark.jpg",
+    "description": "A laser‑cut wooden bookmark featuring a leaf pattern. Lightweight, durable, and perfect for book lovers."
+  },
+  {
+    "id": 109,
+    "title": "Handmade Resin Keychain",
+    "category": "resin",
+    "image": "images/resin-keychain.jpg",
+    "description": "A clear resin keychain with embedded dried flowers and gold flakes. Polished for a glossy finish."
+  },
+  {
+    "id": 110,
+    "title": "Paper Quilling Flower",
+    "category": "paper",
+    "image": "images/quilling-flower.jpg",
+    "description": "A colorful paper‑quilled flower made from tightly rolled strips. Great for greeting cards and wall art."
+  }
+]
+

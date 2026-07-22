@@ -1,0 +1,462 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:wght@100..900&display=swap');
+
+/* ---------------------------------------------------
+   GLOBAL STYLES
+--------------------------------------------------- */
+
+body {
+  margin: 0 5%;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
+  color: #000;
+}
+
+h1, h2, h3 {
+  margin: 0;
+}
+
+a {
+  font-family: 'Open Sans', sans-serif;
+  text-decoration: none;
+  color: #000;
+}
+
+a:hover {
+  color: white;
+  background-color: #DEC5E3;
+}
+
+/* ---------------------------------------------------
+   NAVIGATION
+--------------------------------------------------- */
+
+.navbar {
+  display: flex;
+  justify-content: space-between; /* logo left, ☰ right */
+  align-items: center;
+  padding: 15px 30px;
+  background: #fff;
+  border-bottom: 2px solid #c3c3c3;
+}
+
+.nav-links {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-toggle {
+  display: none;
+  border: none;
+  background: transparent;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+.navbar .logo {
+  margin-right: 10px;
+}
+
+/* ---------------------------------------------------
+   HERO (INDEX PAGE)
+--------------------------------------------------- */
+
+.hero {
+  text-align: center;
+  padding: 50px 0;
+}
+
+.hero h2 {
+  font-size: 4rem;
+  animation: fadeIn 0.8s ease-in;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  width: 70%;
+  margin: 10px auto 0;
+}
+
+header h2 {
+  font-family: 'Bitcount Grid Double', 'Times New Roman', Times, serif;
+  text-align: center;
+  font-size: 4rem;
+  margin-top: 50px;
+  font-weight: 380;
+}
+
+/* ---------------------------------------------------
+   SEARCH
+--------------------------------------------------- */
+
+.search-bar {
+  width: min(480px, 100%);
+  display: flex;
+  justify-self: center;
+  justify-content: space-between;
+  align-content:center;
+  border: solid 2px black;
+  border-radius: 50px;
+}
+
+.search-bar input {
+  border: none;
+  background-color: transparent;
+  color: #3B3B3B;
+  padding: 15px 25px;
+  font-size: 1rem;
+  width: 100%;
+  outline: none;
+}
+
+.search-bar img {
+  width: 32px;
+  border: none;
+}
+
+.search-craft {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+/* ---------------------------------------------------
+   INDEX PAGE MAIN LAYOUT
+--------------------------------------------------- */
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  padding: 40px 0;
+}
+
+.craft-grid {
+  grid-column: 1/3;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.card {
+  width: 100%;
+  aspect-ratio: 1/1;
+  background: #DEC5E3;
+  position: relative;
+}
+
+/* ---------------------------------------------------
+   RIGHT SIDE FORM
+--------------------------------------------------- */
+
+.right {
+  grid-column: 3/4;
+  grid-row: 1/3;
+  display: flex;
+  flex-direction: column;
+}
+
+.right h3 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.right form {
+  display: flex;
+  flex-direction: column;
+}
+
+.right input,
+.right select {
+  padding: 8px;
+  border: 2px solid #000;
+  background: #fff;
+}
+
+.right button {
+  margin-top: 10px;
+  padding: 10px;
+  border: 2px solid #000;
+  background: #FAFF81;
+  cursor: pointer;
+}
+
+.fav-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 1.6rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.loadmore {
+  display: flex;
+  justify-self: center; 
+}
+
+.craft-grid, main {
+  padding-bottom: 40px;
+}
+
+/* ---------------------------------------------------
+   CATEGORY SELECT (INDEX PAGE)
+--------------------------------------------------- */
+
+.filter {
+  width: min(480px, 100%);
+  display: block;
+  margin: 20px auto 0; /* centers it horizontally */
+  padding: 12px 18px;
+  font-size: 1rem;
+  border: 2px solid #000;
+  border-radius: 50px;
+  background: #fff;
+  color: #3B3B3B;
+  cursor: pointer;
+
+  /* Remove default arrow */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  /* Custom arrow */
+  background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='20' viewBox='0 0 24 24' width='20' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 18px center;
+  background-size: 18px;
+}
+
+/* ---------------------------------------------------
+   MY PAGE
+--------------------------------------------------- */
+
+.mypage-layout h2 {
+  font-family: 'Bitcount Grid Double', sans-serif;
+  font-weight: 380;          /* lighter weight */
+  font-size: 3rem;           /* still big but softer */
+  text-align: center;        /* centered */
+  margin: 0 auto 20px;       /* center with spacing */
+  grid-column: 1 / -1;       /* span across both columns */
+}
+
+.mypage-layout {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 40px;
+  width: 90%;
+  margin: 40px auto;
+  align-items: start;
+}
+
+.mypage-content {
+  width: 100%;
+}
+
+.mypage-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.tab {
+  padding: 12px 16px;
+  cursor: pointer;
+  border-left: 4px solid transparent;
+}
+
+.tab.active {
+  background: #f0f0f0;
+  border-left-color: #000;
+}
+
+.page-section {
+  display: none;
+}
+
+.page-section.active {
+  display: block;
+}
+
+.myposts-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.post-card {
+  width: 100%;
+  height: 180px;
+  background: #DEC5E3;
+  border: 2px solid #000;
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 10px;
+}
+
+/* ---------------------------------------------------
+   ABOUT PAGE
+--------------------------------------------------- */
+
+.about-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  width: 70%;
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+/* ---------------------------------------------------
+   FOOTER
+--------------------------------------------------- */
+
+.footer {
+  text-align: center;
+  padding: 30px 0;
+  background: #fff;
+  border-top: 2px solid #c3c3c3;
+  margin-top: 40px;
+}
+
+.footer a {
+  margin: 0 10px;
+}
+
+/* ---------------------------------------------------
+   RESPONSIVE DESIGN
+--------------------------------------------------- */
+
+@media (max-width: 768px) {
+  body {
+  margin: 0;
+  padding: 0 20px;
+}
+
+
+  .navbar {
+    display: flex;
+    justify-content: space-between; /* logo left, ☰ right */
+    align-items: center;
+    position: relative;
+  }
+
+  /* Show hamburger */
+  .menu-toggle {
+    display: block;
+  }
+
+  /* Hide nav-links by default */
+  .nav-links {
+    display: none;               /* HIDDEN */
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+    background: #fff;
+    width: 100%;
+    padding: 15px 0;
+    position: absolute;
+    top: 100%;                   /* BELOW header */
+    left: 0;
+    border-bottom: 2px solid #c3c3c3;
+  }
+
+  /* Show nav-links when toggled */
+  .nav-links.show {
+    display: flex;               /* VISIBLE */
+  }
+
+  /* Craft grid */
+  .craft-grid {
+    grid-template-columns: 1fr;
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .right {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .myposts-grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  }
+
+  .about-container {
+    grid-template-columns: 1fr;
+    width: 90%;
+  }
+
+  .card-overlay {
+    position: relative;
+    padding: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+  margin: 0 30px;
+}
+
+  .hero h2 {
+    font-size: 2rem;
+  }
+
+  .navbar h1.logo {
+    font-size: 1.5rem;
+  }
+
+  .tab {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+  }
+
+  .post-card h4 {
+    font-size: 0.9rem;
+  }
+
+  .post-card p {
+    font-size: 0.75rem;
+  }
+  .craft-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }  
+}
+
+/* ---------------------------------------------------
+   MODAL
+--------------------------------------------------- */
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  width: 90%;
+  max-width: 350px;
+  border-radius: 12px;
+  border: 2px solid #000;
+}

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Page - Craft Share</title>
+  <link rel="stylesheet" href="styles/styles.css">
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <nav class="navbar" aria-label="Main navigation">
+  <h1 class="logo">CraftShare</h1>
+
+  <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">
+    ☰
+  </button>
+
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="mypage.html">My Page</a></li>
+  </ul>
+</nav>
+
+
+  <!-- MAIN LAYOUT -->
+  <div class="mypage-layout">
+
+    <h2>My Page</h2>
+
+    <!-- LEFT MENU -->
+    <aside class="mypage-sidebar">
+      <div class="tab active" data-page="myposts">My Posts</div>
+      <div class="tab" data-page="favorite">Favorite</div>
+      <div class="tab" data-page="settings">Settings</div>
+    </aside>
+
+    <!-- RIGHT CONTENT -->
+    <section class="mypage-content">
+
+      <!-- MY POSTS -->
+      <div id="myposts" class="page-section active">
+        <button class="new-post-btn">+ New Post</button>
+
+        <div class="myposts-grid" id="myposts-container"></div>
+
+        <button class="load-more" id="loadMorePosts">Load More</button>
+      </div>
+
+      <!-- FAVORITE -->
+      <div id="favorite" class="page-section">
+        <div class="myposts-grid" id="favorite-container"></div>
+
+        <button class="load-more" id="loadMoreFavorite">Load More</button>
+      </div>
+
+      <!-- SETTINGS -->
+      <div id="settings" class="page-section">
+        <div class="settings-box">
+          <button id="changePasswordBtn">Change Password</button>
+          <button id="logoutBtn">Logout</button>
+        </div>
+      </div>
+
+    </section>
+  </div>
+
+  <!-- LOGIN MODAL -->
+  <div id="loginModal" class="modal">
+    <div class="modal-content">
+      <span class="close-login">&times;</span>
+
+      <h3>Login</h3>
+
+      <label>Email</label>
+      <input type="email" id="loginEmail">
+
+      <label>Password</label>
+      <input type="password" id="loginPassword">
+
+      <button id="loginBtn">Login</button>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <h1 class="logo">CraftShare</h1>
+    <a href="#">Terms of Service</a>
+    <a href="#">Privacy Policy</a>
+    <p>© 2026 Alisa Ishisaka</p>
+  </footer>
+
+  <!-- NEW POST MODAL -->
+  <div id="newPostModal" class="modal">
+    <div class="modal-content">
+      <span class="close-newpost">&times;</span>
+
+      <h3>Create New Post</h3>
+
+      <label>Title</label>
+      <input type="text" id="postTitle">
+
+      <label>Category</label>
+      <select id="postCategory" required>
+        <option value="">Select</option>
+        <option value="crochet">Crochet</option>
+        <option value="knitting">Knitting</option>
+        <option value="sewing">Sewing</option>
+        <option value="embroidery">Embroidery</option>
+        <option value="quilting">Quilting</option>
+        <option value="weaving">Weaving</option>
+        <option value="paper">Paper Craft</option>
+        <option value="origami">Origami</option>
+        <option value="calligraphy">Calligraphy</option>
+        <option value="painting">Painting</option>
+        <option value="drawing">Drawing</option>
+        <option value="clay">Clay / Ceramics</option>
+        <option value="woodworking">Woodworking</option>
+        <option value="jewelry">Jewelry Making</option>
+        <option value="resin">Resin Art</option>
+        <option value="candle">Candle Making</option>
+        <option value="soap">Soap Making</option>
+        <option value="leather">Leather Craft</option>
+        <option value="digital">Digital Craft (Cricut, Laser)</option>
+        <option value="diy">DIY / Upcycling</option>
+        <option value="other">Other</option>
+      </select>
+
+      <label>Image</label>
+      <input type="file" id="postImage" accept="image/*">
+
+      <label>Description</label>
+      <textarea id="postDescription"></textarea>
+
+      <label>YouTube Link (optional)</label>
+      <input type="url" id="postYoutube">
+
+      <button id="savePostBtn">Save Post</button>
+    </div>
+  </div>
+
+  <script src="scripts/mypage.js"></script>
+</body>
+</html>

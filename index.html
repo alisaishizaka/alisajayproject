@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Craft Share</title>
+  <link rel="stylesheet" href="styles/styles.css">
+</head>
+
+<body>
+
+  <nav class="navbar" aria-label="Main navigation">
+  <h1 class="logo">CraftShare</h1>
+
+  <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">
+    ☰
+  </button>
+
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="mypage.html">My Page</a></li>
+  </ul>
+</nav>
+
+  <!-- HERO SECTION -->
+  <header class="hero">
+    <h2>Join us</h2>
+    <p>Share and discover crafts with tutorials and materials—all in one place.</p>
+  </header>
+
+  <!-- SEARCH BAR -->
+  <section class="search-bar">
+    <input type="text" id="searchBar" placeholder="Search crafts..." class="search-input">
+    <button class="search-craft" id="searchButton" type="button">
+      <img src="images/search.jpg" alt="search icon">
+    </button>
+  </section>
+
+  <!-- CATEGORY FILTER -->
+  <select class="filter" id="categoryFilter">
+    <option value="">All Categories</option>
+    <option value="crochet">Crochet</option>
+    <option value="knitting">Knitting</option>
+    <option value="sewing">Sewing</option>
+    <option value="embroidery">Embroidery</option>
+    <option value="quilting">Quilting</option>
+    <option value="weaving">Weaving</option>
+    <option value="paper">Paper Craft</option>
+    <option value="origami">Origami</option>
+    <option value="calligraphy">Calligraphy</option>
+    <option value="painting">Painting</option>
+    <option value="drawing">Drawing</option>
+    <option value="clay">Clay / Ceramics</option>
+    <option value="woodworking">Woodworking</option>
+    <option value="jewelry">Jewelry Making</option>
+    <option value="resin">Resin Art</option>
+    <option value="candle">Candle Making</option>
+    <option value="soap">Soap Making</option>
+    <option value="leather">Leather Craft</option>
+    <option value="digital">Digital Craft (Cricut, Laser)</option>
+    <option value="diy">DIY / Upcycling</option>
+    <option value="other">Other</option>
+  </select>
+
+  <!-- MAIN LAYOUT -->
+  <main class="container">
+
+    <!-- LEFT: Craft Grid -->
+    <div class="craft-grid" id="craftGrid"></div>
+
+    <!-- RIGHT: Create Account Form -->
+    <div class="right">
+      <h3>Create Account</h3>
+
+      <form id="signupForm" novalidate>
+        <label for="userId">Your ID</label>
+        <input type="text" id="userId" name="userId" required minlength="3">
+
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required minlength="8">
+
+        <label>What are you interested in?</label>
+        <select id="interestSelect">
+          <option value="">All Categories</option>
+          <option value="crochet">Crochet</option>
+          <option value="knitting">Knitting</option>
+          <option value="sewing">Sewing</option>
+          <option value="embroidery">Embroidery</option>
+          <option value="quilting">Quilting</option>
+          <option value="weaving">Weaving</option>
+          <option value="paper">Paper Craft</option>
+          <option value="origami">Origami</option>
+          <option value="calligraphy">Calligraphy</option>
+          <option value="painting">Painting</option>
+          <option value="drawing">Drawing</option>
+          <option value="clay">Clay / Ceramics</option>
+          <option value="woodworking">Woodworking</option>
+          <option value="jewelry">Jewelry Making</option>
+          <option value="resin">Resin Art</option>
+          <option value="candle">Candle Making</option>
+          <option value="soap">Soap Making</option>
+          <option value="leather">Leather Craft</option>
+          <option value="digital">Digital Craft (Cricut, Laser)</option>
+          <option value="diy">DIY / Upcycling</option>
+          <option value="other">Other</option>
+        </select>
+
+        <button type="submit">SUBMIT</button>
+      </form>
+    </div>
+
+  </main>
+
+  <button type="button" class="loadmore">Load more</button>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <h1 class="logo">CraftShare</h1>
+    <a href="#">Terms of Service</a>
+    <a href="#">Privacy Policy</a>
+    <p>© 2026 Alisa Ishisaka</p>
+  </footer>
+
+  <script type="module" src="scripts/index.js"></script>
+
+
+</body>
+</html>
