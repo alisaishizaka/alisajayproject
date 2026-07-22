@@ -3,7 +3,6 @@ export async function loadCrafts() {
   const data = await response.json();
   return data;
 }
-fetch("./data/crafts.json")
 
 
 /* -------------------------------------------------------------
