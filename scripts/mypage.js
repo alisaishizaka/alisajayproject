@@ -53,12 +53,6 @@ if (!loggedInUser && loginModal) {
   loginModal.style.display = 'flex';
 }
 
-if (closeLogin && loginModal) {
-  closeLogin.addEventListener('click', () => {
-    loginModal.style.display = 'none';
-  });
-}
-
 if (loginBtn) {
   loginBtn.addEventListener('click', () => {
     const email = loginEmail.value.trim();

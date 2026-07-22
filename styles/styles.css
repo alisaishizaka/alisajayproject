@@ -496,6 +496,53 @@ header h2 {
   cursor: pointer;
 }
 
+/* CLEAN LOGIN MODAL */
+#loginModal .modal-content {
+  text-align: left;
+  padding: 24px 28px;        /* clean inner spacing */
+  display: flex;
+  flex-direction: column;
+  gap: 14px;                 /* even spacing between elements */
+}
+
+/* Close button aligned cleanly */
+#loginModal .close-login {
+  align-self: flex-end;
+  font-size: 1.4rem;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+/* Labels */
+#loginModal label {
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+/* Inputs */
+#loginModal input {
+  padding: 10px;
+  border: 2px solid #000;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+/* Login button */
+#loginModal #loginBtn {
+  padding: 10px 14px;
+  border: 2px solid #000;
+  background: #FAFF81;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+#loginModal #loginBtn:hover {
+  background: #ffe600;
+  transform: translateY(-2px);
+}
+
+
 /* ---------------------------------------------------
    RESPONSIVE DESIGN
 --------------------------------------------------- */
