@@ -1,4 +1,10 @@
-import { loadCrafts } from "./crafts.js";
+export async function loadCrafts() {
+  const response = await fetch("./data/crafts.json");
+  const data = await response.json();
+  return data;
+}
+fetch("./data/crafts.json")
+
 
 /* -------------------------------------------------------------
    GLOBAL STATE
