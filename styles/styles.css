@@ -96,7 +96,7 @@ header h2 {
   display: flex;
   justify-self: center;
   justify-content: space-between;
-  align-content:center;
+  align-content: center;
   border: solid 2px black;
   border-radius: 50px;
 }
@@ -145,7 +145,42 @@ header h2 {
   aspect-ratio: 1/1;
   background: #DEC5E3;
   position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.15);
+}
+
+/* Make all card text white */
+.card-overlay h3,
+.card-overlay p,
+.card-overlay .category,
+.card-overlay .preview {
+  color: white;
+  text-shadow: 0px 2px 6px rgba(0,0,0,0.6); /* improves readability */
+}
+
+.card-overlay {
+  position: absolute;
+  bottom: 0;          /* move text to bottom */
+  left: 0;
+  width: 100%;
+  padding: 16px;      /* add space around text */
+  box-sizing: border-box;
+}
+
+.card-overlay h3,
+.card-overlay p,
+.card-overlay .category,
+.card-overlay .preview {
+  color: white;
+}
+
 
 /* ---------------------------------------------------
    RIGHT SIDE FORM
@@ -181,6 +216,13 @@ header h2 {
   border: 2px solid #000;
   background: #FAFF81;
   cursor: pointer;
+  border-radius: 8px;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.right button:hover {
+  background: #ffe600;
+  transform: translateY(-2px);
 }
 
 .fav-icon {
@@ -194,7 +236,19 @@ header h2 {
 
 .loadmore {
   display: flex;
-  justify-self: center; 
+  justify-self: center;
+  margin: 0 auto 40px;
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: 2px solid #000;
+  background: #FAFF81;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.loadmore:hover {
+  background: #ffe600;
+  transform: translateY(-2px);
 }
 
 .craft-grid, main {
@@ -235,11 +289,11 @@ header h2 {
 
 .mypage-layout h2 {
   font-family: 'Bitcount Grid Double', sans-serif;
-  font-weight: 380;          /* lighter weight */
-  font-size: 3rem;           /* still big but softer */
-  text-align: center;        /* centered */
-  margin: 0 auto 20px;       /* center with spacing */
-  grid-column: 1 / -1;       /* span across both columns */
+  font-weight: 380;
+  font-size: 3rem;
+  text-align: center;
+  margin: 0 auto 20px;
+  grid-column: 1 / -1;
 }
 
 .mypage-layout {
@@ -298,6 +352,55 @@ header h2 {
   flex-direction: column;
   justify-content: flex-end;
   padding: 10px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.post-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.15);
+}
+
+/* My Page buttons UX */
+
+.new-post-btn,
+.load-more,
+#loadMorePosts,
+#loadMoreFavorite,
+.delete-post-btn {
+  background: #FAFF81;
+  border: 2px solid #000;
+  padding: 10px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease;
+  margin: 20px 0;
+}
+
+.new-post-btn:hover,
+.load-more:hover,
+#loadMorePosts:hover,
+#loadMoreFavorite:hover,
+.delete-post-btn:hover {
+  background: #ffe600;
+  transform: translateY(-2px);
+}
+
+.settings-box button {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background: #DEC5E3;
+  border: 2px solid #000;
+  padding: 10px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.settings-box button:hover {
+  background: #caa9d8;
+  transform: translateY(-2px);
 }
 
 /* ---------------------------------------------------
@@ -305,11 +408,11 @@ header h2 {
 --------------------------------------------------- */
 
 .about-title {
-  font-family: "Bitocunt", sans-serif;
+  font-family: 'Bitcount Grid Double', sans-serif;
   font-weight: 380;
   font-size: clamp(2rem, 4vw, 3rem);
   text-align: center;
-  margin-bottom: 1rem;
+  margin: 1rem;
   animation: fadeSlideUp 0.8s ease-out;
 }
 
@@ -356,6 +459,7 @@ header h2 {
 }
 
 /* VIEW POST MODAL */
+
 .view-post-box {
   max-width: 600px;
   width: 95%;
@@ -398,10 +502,9 @@ header h2 {
 
 @media (max-width: 768px) {
   body {
-  margin: 0;
-  padding: 0 20px;
-}
-
+    margin: 0;
+    padding: 0 20px;
+  }
 
   .navbar {
     display: flex;
@@ -460,17 +563,12 @@ header h2 {
     grid-template-columns: 1fr;
     width: 90%;
   }
-
-  .card-overlay {
-    position: relative;
-    padding: 12px;
-  }
 }
 
 @media (max-width: 480px) {
   body {
-  margin: 0 30px;
-}
+    margin: 0 30px;
+  }
 
   .hero h2 {
     font-size: 2rem;
@@ -492,8 +590,9 @@ header h2 {
   .post-card p {
     font-size: 0.75rem;
   }
+
   .craft-grid {
     grid-template-columns: 1fr;
     gap: 20px;
-  }  
+  }
 }

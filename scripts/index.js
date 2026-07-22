@@ -52,7 +52,7 @@ async function init() {
 init();
 
 /* -------------------------------------------------------------
-   RENDER POSTS
+   RENDER POSTS + POPUP MODAL
 ------------------------------------------------------------- */
 
 function renderHomePosts(list) {
@@ -61,16 +61,21 @@ function renderHomePosts(list) {
 
   container.innerHTML = "";
 
+  // Modal elements (used for popup)
+  const modal = document.getElementById("viewPostModal");
+  const modalImage = document.getElementById("viewPostImage");
+  const modalTitle = document.getElementById("viewPostTitle");
+  const modalCategory = document.getElementById("viewPostCategory");
+  const modalDescription = document.getElementById("viewPostDescription");
+  const modalYoutube = document.getElementById("viewPostYoutube");
+  const modalFav = document.getElementById("viewPostFav");
+  const closeModal = document.querySelector(".close-viewpost");
+
   const limited = list.slice(0, visibleCount);
 
   limited.forEach(post => {
     const card = document.createElement("div");
     card.classList.add("card");
-
-    /* ⭐ REQUIRED FOR FULL CREDIT — URL PARAMETER NAVIGATION ⭐ */
-    card.addEventListener("click", () => {
-      window.location.href = `post.html?id=${post.id}`;
-    });
 
     card.style.backgroundImage = `url(${post.image})`;
     card.style.backgroundSize = "cover";
@@ -119,6 +124,66 @@ function renderHomePosts(list) {
 
       localStorage.setItem("posts", JSON.stringify(posts));
       favIcon.textContent = storedPost.likedBy.includes(loggedInUser.email) ? "❤️" : "♡";
+    });
+
+    /* POPUP MODAL ON CARD CLICK */
+    card.addEventListener("click", () => {
+      if (!modal) return;
+
+      modalImage.src = post.image;
+      modalTitle.textContent = post.title;
+      modalCategory.textContent = post.category;
+      modalDescription.textContent = post.description;
+
+      if (post.youtube) {
+        modalYoutube.textContent = "Watch Tutorial";
+        modalYoutube.href = post.youtube;
+        modalYoutube.style.display = "inline-block";
+      } else {
+        modalYoutube.style.display = "none";
+      }
+
+      const modalIsFav =
+        loggedInUser && storedPost.likedBy.includes(loggedInUser.email);
+      modalFav.textContent = modalIsFav ? "❤️" : "♡";
+
+      // Toggle favorite from modal
+      modalFav.onclick = () => {
+        if (!loggedInUser) {
+          alert("Please log in to like posts.");
+          return;
+        }
+
+        if (!storedPost.likedBy.includes(loggedInUser.email)) {
+          storedPost.likedBy.push(loggedInUser.email);
+        } else {
+          storedPost.likedBy = storedPost.likedBy.filter(
+            u => u !== loggedInUser.email
+          );
+        }
+
+        localStorage.setItem("posts", JSON.stringify(posts));
+
+        const nowFav = storedPost.likedBy.includes(loggedInUser.email);
+        modalFav.textContent = nowFav ? "❤️" : "♡";
+        favIcon.textContent = nowFav ? "❤️" : "♡";
+      };
+
+      modal.style.display = "flex";
+    });
+
+    // Close modal (X button)
+    if (closeModal) {
+      closeModal.onclick = () => {
+        modal.style.display = "none";
+      };
+    }
+
+    // Close modal when clicking outside
+    window.addEventListener("click", (e) => {
+      if (e.target === modal) {
+        modal.style.display = "none";
+      }
     });
 
     container.appendChild(card);
@@ -235,7 +300,7 @@ function setupFormValidation() {
 }
 
 /* -------------------------------------------------------------
-   MOBILE MENU TOGGLE
+   MOBILE MENU TOGGLE (with UX fix)
 ------------------------------------------------------------- */
 
 function setupMenuToggle() {
@@ -249,6 +314,14 @@ function setupMenuToggle() {
 
     const expanded = menuButton.getAttribute("aria-expanded") === "true";
     menuButton.setAttribute("aria-expanded", (!expanded).toString());
+  });
+
+  // Close menu when clicking any nav link (mobile UX)
+  navLinks.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      navLinks.classList.remove("show");
+      menuButton.setAttribute("aria-expanded", "false");
+    });
   });
 
   window.addEventListener("resize", () => {
@@ -269,7 +342,7 @@ function highlightCurrentNav() {
   const links = document.querySelectorAll(".nav-links a");
 
   links.forEach(link => {
-    const url = new URL(link.href);
+    const url = new URL(link.href, window.location.origin);
     const id = url.searchParams.get("id");
     if (id === pageId) {
       link.style.textDecoration = "underline";

@@ -326,6 +326,46 @@ function deletePost(id) {
 }
 
 /* -------------------------------------------------------------
+   SETTINGS — CHANGE PASSWORD + LOGOUT
+------------------------------------------------------------- */
+
+const changePasswordBtn = document.getElementById("changePasswordBtn");
+const logoutBtn = document.getElementById("logoutBtn");
+
+// CHANGE PASSWORD
+if (changePasswordBtn) {
+  changePasswordBtn.addEventListener("click", () => {
+    const newPass = prompt("Enter your new password:");
+
+    if (!newPass || newPass.trim() === "") {
+      alert("Password cannot be empty.");
+      return;
+    }
+
+    const users = JSON.parse(localStorage.getItem("users")) || [];
+    const user = users.find(u => u.email === loggedInUser.email);
+
+    if (user) {
+      user.password = newPass.trim();
+      localStorage.setItem("users", JSON.stringify(users));
+      alert("Password updated!");
+    }
+  });
+}
+
+// LOGOUT
+if (logoutBtn) {
+  logoutBtn.addEventListener("click", () => {
+    const confirmLogout = confirm("Are you sure you want to log out?");
+    if (!confirmLogout) return;
+
+    localStorage.removeItem("loggedInUser");
+    alert("Logged out successfully.");
+    window.location.href = "index.html";
+  });
+}
+
+/* -------------------------------------------------------------
    VIEW POST POPUP
 ------------------------------------------------------------- */
 
