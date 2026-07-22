@@ -74,6 +74,7 @@
       <h3>Create Account</h3>
 
       <form id="signupForm" novalidate>
+        <p id="formMessage" aria-live="polite"></p>
         <label for="userId">Your ID</label>
         <input type="text" id="userId" name="userId" required minlength="3">
 
@@ -124,6 +125,24 @@
     <a href="#">Privacy Policy</a>
     <p>© 2026 Alisa Ishisaka</p>
   </footer>
+
+  <!-- VIEW POST MODAL -->
+<div id="viewPostModal" class="modal">
+  <div class="modal-content view-post-box">
+    <span class="close-viewpost">&times;</span>
+
+    <img id="viewPostImage" alt="Post Image">
+
+    <h3 id="viewPostTitle"></h3>
+    <p id="viewPostCategory"></p>
+    <p id="viewPostDescription"></p>
+
+    <a id="viewPostYoutube" href="#" target="_blank"></a>
+
+    <span id="viewPostFav" class="fav-icon">♡</span>
+  </div>
+</div>
+
 
   <script type="module" src="scripts/index.js"></script>
 

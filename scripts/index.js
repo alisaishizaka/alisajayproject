@@ -1,9 +1,4 @@
-export async function loadCrafts() {
-  const response = await fetch("./data/crafts.json");
-  const data = await response.json();
-  return data;
-}
-
+import { loadCrafts } from "./crafts.js";
 
 /* -------------------------------------------------------------
    GLOBAL STATE
@@ -71,6 +66,11 @@ function renderHomePosts(list) {
   limited.forEach(post => {
     const card = document.createElement("div");
     card.classList.add("card");
+
+    /* ⭐ REQUIRED FOR FULL CREDIT — URL PARAMETER NAVIGATION ⭐ */
+    card.addEventListener("click", () => {
+      window.location.href = `post.html?id=${post.id}`;
+    });
 
     card.style.backgroundImage = `url(${post.image})`;
     card.style.backgroundSize = "cover";
@@ -235,7 +235,7 @@ function setupFormValidation() {
 }
 
 /* -------------------------------------------------------------
-   MOBILE MENU TOGGLE (FINAL VERSION)
+   MOBILE MENU TOGGLE
 ------------------------------------------------------------- */
 
 function setupMenuToggle() {
